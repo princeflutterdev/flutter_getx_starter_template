@@ -1,5 +1,6 @@
 abstract class Constants {
-  static const String baseUrl = String.fromEnvironment('B');
+  static const String baseUrl = 'https://jsonplaceholder.typicode.com/';
+  // String.fromEnvironment('https://jsonplaceholder.typicode.com/posts');
 
   static const timeout = Duration(seconds: 5);
   static const String token = 'authToken';
