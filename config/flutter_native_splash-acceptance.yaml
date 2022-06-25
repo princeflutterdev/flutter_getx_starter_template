@@ -1,0 +1,16 @@
+# flutter_native_splash-acceptance.yaml
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/logo-acceptance.png
+  branding: assets/branding-acceptance.png
+  color_dark: "#121212"
+  image_dark: assets/logo-acceptance.png
+  branding_dark: assets/branding-acceptance.png
+
+  android_12:
+    image: assets/logo-acceptance.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo-acceptance.png
+    icon_background_color_dark: "#121212"
+  
+  web: false
