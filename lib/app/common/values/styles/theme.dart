@@ -93,7 +93,7 @@ abstract class AppTheme {
         backgroundColor: AppColors.kPrimaryColor,
       ),
       textTheme: TextTheme(
-        subtitle1: AppTextStyle.regularStyle.copyWith(
+        titleMedium: AppTextStyle.regularStyle.copyWith(
           color: AppColors.mineShaft,
           fontSize: Dimens.fontSize14,
         ),

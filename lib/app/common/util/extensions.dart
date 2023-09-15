@@ -95,8 +95,8 @@ extension FutureExt<T> on Future<Response<T>?> {
     required VoidCallback retryFunction,
     bool showLoading = true,
   }) {
-    final _interface = Get.find<ApiInterfaceController>();
-    _interface.error = null;
+    final interface = Get.find<ApiInterfaceController>();
+    interface.error = null;
 
     if (showLoading) LoadingDialog.showLoadingDialog();
 
@@ -107,7 +107,7 @@ extension FutureExt<T> on Future<Response<T>?> {
 
         Utils.showSnackbar(Strings.connectionTimeout);
 
-        _retry(_interface, retryFunction);
+        _retry(interface, retryFunction);
 
         throw const ApiError(
           type: ErrorType.connectTimeout,
@@ -124,7 +124,7 @@ extension FutureExt<T> on Future<Response<T>?> {
         }
       }
 
-      _interface.update();
+      interface.update();
     }).catchError((e) {
       LoadingDialog.closeLoadingDialog();
 
@@ -135,9 +135,9 @@ extension FutureExt<T> on Future<Response<T>?> {
       if (e is ApiError) {
         if ((e.type == ErrorType.connectTimeout ||
             e.type == ErrorType.noConnection)) {
-          _interface.error = e;
+          interface.error = e;
 
-          _retry(_interface, retryFunction);
+          _retry(interface, retryFunction);
         } else {
           Utils.showDialog(
             errorMessage,
@@ -164,11 +164,11 @@ extension FutureExt<T> on Future<Response<T>?> {
   }
 
   void _retry(
-    ApiInterfaceController _interface,
+    ApiInterfaceController interface,
     VoidCallback retryFunction,
   ) {
-    _interface.retry = retryFunction;
-    _interface.update();
+    interface.retry = retryFunction;
+    interface.update();
   }
 }
 

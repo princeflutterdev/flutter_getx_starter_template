@@ -124,18 +124,18 @@ abstract class AppTextStyle {
   );
 
   static TextTheme get textTheme => TextTheme(
-        headline1: headline1,
-        headline2: headline2,
-        headline3: headline3,
-        headline4: headline4,
-        headline5: headline5,
-        headline6: headline6,
-        subtitle1: subtitle1,
-        subtitle2: subtitle2,
-        bodyText1: body1,
-        bodyText2: body2,
-        caption: caption,
-        button: button,
-        overline: overline,
+        displayLarge: headline1,
+        displayMedium: headline2,
+        displaySmall: headline3,
+        headlineMedium: headline4,
+        headlineSmall: headline5,
+        titleLarge: headline6,
+        titleMedium: subtitle1,
+        titleSmall: subtitle2,
+        bodyLarge: body1,
+        bodyMedium: body2,
+        bodySmall: caption,
+        labelLarge: button,
+        labelSmall: overline,
       );
 }

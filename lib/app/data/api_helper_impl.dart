@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import 'api_helper.dart';
 
-class ApiHelperImpl extends GetConnect with ApiHelper {
+class ApiHelperImpl extends GetConnect implements ApiHelper {
   @override
   void onInit() {
     httpClient.baseUrl = Constants.baseUrl;

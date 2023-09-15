@@ -25,7 +25,7 @@ class CustomCheckboxWidget extends FormField<bool> {
                   ? Builder(
                       builder: (_) => Text(
                         state.errorText!,
-                        style: TextStyle(color: Theme.of(_).errorColor),
+                        style: TextStyle(color: Theme.of(_).colorScheme.error),
                       ),
                     )
                   : null,
