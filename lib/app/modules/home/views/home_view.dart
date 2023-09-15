@@ -23,18 +23,18 @@ class HomeView extends GetView<HomeController> {
             padding: const EdgeInsets.all(16),
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              final dynamic _data = controller.dataList[index];
+              final dynamic data = controller.dataList[index];
 
               return Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Title: ${_data['title'].toString()}',
+                    'Title: ${data['title'].toString()}',
                   ),
                   SizedBox(height: 5.h),
                   Text(
-                    'Body: ${_data['body'].toString()}',
+                    'Body: ${data['body'].toString()}',
                   ),
                 ],
               );

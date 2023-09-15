@@ -16,7 +16,7 @@ class CustomErrorWidget extends StatelessWidget {
       body: Center(
         child: Text(
           message ?? Strings.somethingWentWrong,
-          style: Get.textTheme.headline5,
+          style: Get.textTheme.headlineSmall,
         ),
       ),
     );

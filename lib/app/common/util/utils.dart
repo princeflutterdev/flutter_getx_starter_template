@@ -106,16 +106,16 @@ abstract class Utils {
           ),
     ).then((v) {
       if (v != null) {
-        final _now = DateTime.now();
-        final _dateTime = DateTime(
-          _now.year,
-          _now.month,
-          _now.day,
+        final now = DateTime.now();
+        final dateTime = DateTime(
+          now.year,
+          now.month,
+          now.day,
           v.hour,
           v.minute,
         );
 
-        onSelectTime(_dateTime.formatedDate(dateFormat: 'hh:mm aa'));
+        onSelectTime(dateTime.formatedDate(dateFormat: 'hh:mm aa'));
       }
     });
   }
@@ -124,15 +124,15 @@ abstract class Utils {
     int length, {
     bool isNumber = true,
   }) {
-    final _chars = isNumber ? '1234567890' : 'abcdefghijklmnopqrstuvwxyz';
-    final _rnd = Random();
+    final chars = isNumber ? '1234567890' : 'abcdefghijklmnopqrstuvwxyz';
+    final rnd = Random();
 
     return String.fromCharCodes(
       Iterable.generate(
         length,
-        (_) => _chars.codeUnitAt(
-          _rnd.nextInt(
-            _chars.length,
+        (_) => chars.codeUnitAt(
+          rnd.nextInt(
+            chars.length,
           ),
         ),
       ),
@@ -264,6 +264,7 @@ abstract class Utils {
 
   static Future<File?> getImage({int source = 1}) async {
     File? croppedFile;
+    CroppedFile? crop;
     final picker = ImagePicker();
 
     final pickedFile = await picker.pickImage(
@@ -274,9 +275,20 @@ abstract class Utils {
     if (pickedFile != null) {
       final image = File(pickedFile.path);
 
-      croppedFile = await ImageCropper().cropImage(
+      crop = await ImageCropper().cropImage(
         compressQuality: 50,
         sourcePath: image.path,
+        uiSettings: [
+          AndroidUiSettings(
+              toolbarTitle: 'Cropper',
+              toolbarColor: Colors.deepOrange,
+              toolbarWidgetColor: Colors.white,
+              initAspectRatio: CropAspectRatioPreset.original,
+              lockAspectRatio: false),
+          IOSUiSettings(
+            title: 'Cropper',
+          ),
+        ],
         aspectRatioPresets: [
           CropAspectRatioPreset.square,
           CropAspectRatioPreset.ratio3x2,
@@ -284,18 +296,9 @@ abstract class Utils {
           CropAspectRatioPreset.ratio4x3,
           CropAspectRatioPreset.ratio16x9
         ],
-        androidUiSettings: const AndroidUiSettings(
-          toolbarColor: Colors.transparent,
-          toolbarWidgetColor: Colors.transparent,
-          initAspectRatio: CropAspectRatioPreset.original,
-          lockAspectRatio: false,
-        ),
-        iosUiSettings: const IOSUiSettings(
-          minimumAspectRatio: 0.1,
-          aspectRatioLockDimensionSwapEnabled: true,
-        ),
       );
     }
+    croppedFile = File(crop!.path);
 
     return croppedFile;
   }
