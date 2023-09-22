@@ -15,11 +15,11 @@ analyzer:
   # https://github.com/dart-lang/sdk/issues/31410#issuecomment-510683629
   # implicit-casts: false
 
-  errors:
-    missing_required_param: warning
-    unnecessary_this: ignore
+  # errors:
+    # missing_required_param: warning
+    # unnecessary_this: ignore
     
-    constant_identifier_names: ignore
+    # constant_identifier_names: ignore
 
 linter:
   # The lint rules applied to this project can be customized in the

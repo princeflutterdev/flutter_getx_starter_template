@@ -13,13 +13,13 @@ import 'loading_dialog.dart';
 abstract class Extensions {}
 
 extension BorderRadiusExt on num {
-  BorderRadius get borderRadius => BorderRadius.circular(this.r);
+  BorderRadius get borderRadius => BorderRadius.circular(r);
 
   InputBorder outlineInputBorder({
     BorderSide borderSide = BorderSide.none,
   }) =>
       OutlineInputBorder(
-        borderRadius: this.borderRadius,
+        borderRadius: borderRadius,
         borderSide: borderSide,
       );
 
@@ -30,7 +30,7 @@ extension BorderRadiusExt on num {
   }) =>
       BorderSide(
         color: color ?? Colors.white,
-        width: this.toDouble(),
+        width: toDouble(),
         style: style ?? BorderStyle.solid,
       );
 }
@@ -38,12 +38,12 @@ extension BorderRadiusExt on num {
 extension HexColorExt on String {
   Color get fromHex {
     final buffer = StringBuffer();
-    if (this.length == 6 || this.length == 7) {
+    if (length == 6 || length == 7) {
       buffer.write('ff');
     }
 
-    if (this.startsWith('#')) {
-      buffer.write(this.replaceFirst('#', ''));
+    if (startsWith('#')) {
+      buffer.write(replaceFirst('#', ''));
     }
     return Color(int.parse(buffer.toString(), radix: 16));
   }
@@ -100,7 +100,7 @@ extension FutureExt<T> on Future<Response<T>?> {
 
     if (showLoading) LoadingDialog.showLoadingDialog();
 
-    this.timeout(
+    timeout(
       Constants.timeout,
       onTimeout: () {
         LoadingDialog.closeLoadingDialog();
