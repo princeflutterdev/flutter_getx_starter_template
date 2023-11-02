@@ -23,7 +23,7 @@ dependencies:
   image_cropper: ^5.0.0
   #for date formatting
   intl: ^0.18.1
-  octo_image: ^1.0.2
+  octo_image: ^2.0.0
 
 
 
