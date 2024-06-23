@@ -14,18 +14,17 @@ class CustomImageWidget extends StatelessWidget {
   final Color? color;
 
   const CustomImageWidget({
-    Key? key,
+    super.key,
     required this.imageUrl,
     this.size,
     this.radius,
     this.borderRadius,
     this.color,
     this.height,
-  })  : assert(
+  }) : assert(
           borderRadius == null || radius == null,
           'Cannot provide both a borderRadius and a radius\n',
-        ),
-        super(key: key);
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +46,9 @@ class CustomImageWidget extends StatelessWidget {
                   image: NetworkImage(
                     imageUrl ?? Constants.dummyImageUrl,
                   ),
-                  placeholderBuilder: OctoPlaceholder.blurHash(
-                    Constants.placeHolderBlurHash,
-                  ),
+                  // placeholderBuilder: OctoPlaceholder.blurHash(
+                  //   Constants.placeHolderBlurHash,
+                  // ),
                   errorBuilder: (context, error, stackTrace) {
                     return placeholder;
                   },
