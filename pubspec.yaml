@@ -20,7 +20,7 @@ dependencies:
   get_storage: ^2.1.1
 
   image_picker: ^1.0.4
-  image_cropper: ^7.0.5
+  image_cropper: ^8.0.1
   #for date formatting
   intl: ^0.19.0
   octo_image: ^2.0.0
