@@ -34,29 +34,29 @@ abstract class AppTheme {
       ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          padding: MaterialStateProperty.resolveWith(
+          padding: WidgetStateProperty.resolveWith(
             (_) => EdgeInsets.zero,
           ),
-          overlayColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed)) {
+          overlayColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.pressed)) {
                 return Colors.white.withOpacity(.14);
               }
 
               return null;
             },
           ),
-          textStyle: MaterialStateProperty.resolveWith<TextStyle>(
+          textStyle: WidgetStateProperty.resolveWith<TextStyle>(
             (_) => AppTextStyle.buttonTextStyle,
           ),
-          shape: MaterialStateProperty.resolveWith<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.resolveWith<RoundedRectangleBorder>(
             (states) => RoundedRectangleBorder(
               borderRadius: 10.borderRadius,
             ),
           ),
-          backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.disabled)) {
+          backgroundColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.disabled)) {
                 return AppColors.doveGray;
               }
               return null;
@@ -66,22 +66,22 @@ abstract class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          padding: MaterialStateProperty.resolveWith(
+          padding: WidgetStateProperty.resolveWith(
             (_) => EdgeInsets.zero,
           ),
-          overlayColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed)) {
+          overlayColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.pressed)) {
                 return Colors.white.withOpacity(.14);
               }
 
               return null;
             },
           ),
-          textStyle: MaterialStateProperty.resolveWith<TextStyle>(
+          textStyle: WidgetStateProperty.resolveWith<TextStyle>(
             (_) => AppTextStyle.buttonTextStyle,
           ),
-          shape: MaterialStateProperty.resolveWith<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.resolveWith<RoundedRectangleBorder>(
             (states) => RoundedRectangleBorder(
               borderRadius: 10.borderRadius,
             ),

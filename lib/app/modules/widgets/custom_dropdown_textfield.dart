@@ -13,7 +13,7 @@ class CustomDropdownTextField<T> extends StatelessWidget {
   final double? textFontSize;
 
   const CustomDropdownTextField({
-    Key? key,
+    super.key,
     required this.title,
     required this.dataList,
     required this.item,
@@ -22,7 +22,7 @@ class CustomDropdownTextField<T> extends StatelessWidget {
     this.width,
     this.value,
     this.textFontSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

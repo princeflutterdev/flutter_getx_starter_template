@@ -8,9 +8,9 @@ class CustomDrawerWidget extends StatelessWidget {
   final HomeController controller;
 
   const CustomDrawerWidget({
-    Key? key,
+    super.key,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

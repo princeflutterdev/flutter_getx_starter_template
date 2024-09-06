@@ -13,7 +13,7 @@ class PasswordFieldWidget extends StatelessWidget {
   final TextInputAction textInputAction;
 
   const PasswordFieldWidget({
-    Key? key,
+    super.key,
     this.controller,
     required this.obscureText,
     required this.onObscureIconClick,
@@ -24,7 +24,7 @@ class PasswordFieldWidget extends StatelessWidget {
     this.validator = Validators.validatePassword,
     this.textInputAction = TextInputAction.next,
     this.prefixIcon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -7,13 +7,13 @@ class CustomRowTextWidget extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
 
   const CustomRowTextWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     this.titleStyle,
     this.subtitleStyle,
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

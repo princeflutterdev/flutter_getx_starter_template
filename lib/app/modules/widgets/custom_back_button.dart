@@ -8,11 +8,11 @@ class CustomBackButton extends StatelessWidget {
   final Color? backbuttonColor;
 
   const CustomBackButton({
-    Key? key,
+    super.key,
     this.leading,
     this.onBackTap,
     this.backbuttonColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

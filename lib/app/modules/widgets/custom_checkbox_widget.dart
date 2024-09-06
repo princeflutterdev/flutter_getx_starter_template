@@ -1,16 +1,16 @@
+// ignore_for_file: no_wildcard_variable_uses
+
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_starter_template/app/common/util/validators.dart';
 
 class CustomCheckboxWidget extends FormField<bool> {
   CustomCheckboxWidget({
-    Key? key,
+    super.key,
     required bool value,
-    required FormFieldSetter<bool> onSaved,
+    required FormFieldSetter<bool> super.onSaved,
     required Widget titleWidget,
   }) : super(
-          key: key,
           initialValue: value,
-          onSaved: onSaved,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: (v) => Validators.validateCheckbox(v: v!),
           builder: (state) {

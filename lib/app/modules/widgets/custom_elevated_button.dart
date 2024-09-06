@@ -11,7 +11,7 @@ class CustomElevatedButton extends StatelessWidget {
   final bool addBorder;
 
   const CustomElevatedButton({
-    Key? key,
+    super.key,
     this.title,
     required this.onPressed,
     this.textStyle,
@@ -20,26 +20,25 @@ class CustomElevatedButton extends StatelessWidget {
     this.buttonColor = AppColors.kPrimaryColor,
     this.titleWidget,
     this.addBorder = false,
-  })  : assert(
+  }) : assert(
           title == null || titleWidget == null,
           'Cannot provide both a title and a child\n'
           'To provide both, use "titleWidget: Text(title)".',
-        ),
-        super(key: key);
+        );
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.resolveWith<Size>(
+        minimumSize: WidgetStateProperty.resolveWith<Size>(
           (states) => Size(
             minWidth.w,
             height.h,
           ),
         ),
         shape: addBorder
-            ? MaterialStateProperty.resolveWith<RoundedRectangleBorder>(
+            ? WidgetStateProperty.resolveWith<RoundedRectangleBorder>(
                 (states) => RoundedRectangleBorder(
                   borderRadius: 10.borderRadius,
                   side: BorderSide(
@@ -51,9 +50,9 @@ class CustomElevatedButton extends StatelessWidget {
                 ),
               )
             : AppTheme.theme.textButtonTheme.style!.shape,
-        overlayColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.pressed)) {
+        overlayColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.pressed)) {
               return buttonColor == Colors.transparent ||
                       buttonColor == Colors.white
                   ? AppColors.kPrimaryColor.withOpacity(.24)
@@ -63,9 +62,9 @@ class CustomElevatedButton extends StatelessWidget {
             return null;
           },
         ),
-        backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.disabled)) {
+        backgroundColor: WidgetStateProperty.resolveWith<Color>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
               return AppColors.doveGray;
             }
             return buttonColor;

@@ -8,10 +8,10 @@ class CustomRetryWidget extends StatelessWidget {
   final VoidCallback onPressed;
 
   const CustomRetryWidget({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.error = Strings.somethingWentWrong,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

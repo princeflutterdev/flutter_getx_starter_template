@@ -6,7 +6,7 @@ import 'package:flutter_getx_starter_template/app/modules/widgets/custom_appbar_
 import 'package:get/get.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -14,7 +14,7 @@ class CustomAppbarWidget extends PreferredSize {
   final bool? centerTitle;
 
   CustomAppbarWidget({
-    Key? key,
+    super.key,
     this.title,
     this.titleWidget,
     this.leading,
@@ -35,7 +35,6 @@ class CustomAppbarWidget extends PreferredSize {
           'To provide both, use "textStyle: TextStyle(color: color)".',
         ),
         super(
-          key: key,
           child: const SizedBox.shrink(),
           preferredSize:
               Size.fromHeight(bottom == null ? kToolbarHeight : 98.h),

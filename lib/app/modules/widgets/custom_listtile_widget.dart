@@ -7,11 +7,11 @@ class CustomListTileWidget extends StatelessWidget {
   final Widget? trailing;
 
   const CustomListTileWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.onTap,
     this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ class CustomTextButton extends StatelessWidget {
   final bool addBorder;
 
   const CustomTextButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.title,
     this.height = 52,
@@ -20,19 +20,18 @@ class CustomTextButton extends StatelessWidget {
     this.buttonWidth,
     this.textFontSize,
     this.addBorder = false,
-  })  : assert(
+  }) : assert(
           title == null || child == null,
           'Cannot provide both a title and a child\n'
           'To provide both, use "child: Text(title)".',
-        ),
-        super(key: key);
+        );
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
       style: AppTheme.theme.textButtonTheme.style!.copyWith(
-        minimumSize: MaterialStateProperty.resolveWith<Size>(
+        minimumSize: WidgetStateProperty.resolveWith<Size>(
           (states) => buttonWidth == null
               ? Size.fromHeight(height.h)
               : Size(
@@ -40,9 +39,9 @@ class CustomTextButton extends StatelessWidget {
                   height.h,
                 ),
         ),
-        overlayColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.pressed)) {
+        overlayColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.pressed)) {
               return buttonColor == Colors.transparent ||
                       buttonColor == Colors.white
                   ? AppColors.kPrimaryColor.withOpacity(.24)
@@ -53,7 +52,7 @@ class CustomTextButton extends StatelessWidget {
           },
         ),
         shape: addBorder
-            ? MaterialStateProperty.resolveWith<RoundedRectangleBorder>(
+            ? WidgetStateProperty.resolveWith<RoundedRectangleBorder>(
                 (states) => RoundedRectangleBorder(
                   borderRadius: 23.borderRadius,
                   side: BorderSide(
@@ -65,9 +64,9 @@ class CustomTextButton extends StatelessWidget {
                 ),
               )
             : AppTheme.theme.textButtonTheme.style!.shape,
-        backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.disabled)) {
+        backgroundColor: WidgetStateProperty.resolveWith<Color>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
               return AppColors.doveGray;
             }
 

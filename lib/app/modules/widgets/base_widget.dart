@@ -10,9 +10,9 @@ class BaseWidget extends StatelessWidget {
   final Widget child;
 
   const BaseWidget({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ApiInterfaceController>(

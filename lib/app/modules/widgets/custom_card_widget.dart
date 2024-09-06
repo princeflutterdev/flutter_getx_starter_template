@@ -9,15 +9,14 @@ class CustomCardWidget extends StatelessWidget {
   final bool addForwardIcon;
 
   const CustomCardWidget({
-    Key? key,
+    super.key,
     this.leadingImage,
     required this.title,
     this.trailing,
     required this.onTap,
     this.trailingText,
     this.addForwardIcon = true,
-  })  : assert(trailingText == null || trailing == null, Strings.error),
-        super(key: key);
+  }) : assert(trailingText == null || trailing == null, Strings.error);
 
   @override
   Widget build(BuildContext context) {

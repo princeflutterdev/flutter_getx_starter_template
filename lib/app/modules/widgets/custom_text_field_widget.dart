@@ -23,7 +23,7 @@ class CustomTextFieldWidget extends StatelessWidget {
   final Color? fillColor;
 
   const CustomTextFieldWidget({
-    Key? key,
+    super.key,
     this.labelText,
     this.hintText,
     this.controller,
@@ -49,7 +49,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.isDense,
     this.prefixIconPadding,
     this.fillColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

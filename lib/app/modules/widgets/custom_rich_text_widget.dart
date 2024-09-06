@@ -7,13 +7,13 @@ class CustomRichTextWidget extends StatelessWidget {
   final TextAlign textAlign;
 
   const CustomRichTextWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     this.titleStyle,
     this.subtitleStyle,
     this.textAlign = TextAlign.center,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

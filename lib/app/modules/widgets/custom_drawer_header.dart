@@ -7,9 +7,9 @@ class CustomDrawerHeader extends StatelessWidget {
   final HomeController homeController;
 
   const CustomDrawerHeader({
-    Key? key,
+    super.key,
     required this.homeController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

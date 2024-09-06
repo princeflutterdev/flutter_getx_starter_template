@@ -4,11 +4,10 @@ import 'package:get/get.dart';
 
 class CustomInkwellWidget extends Material {
   CustomInkwellWidget({
-    Key? key,
+    super.key,
     required Function() onTap,
     required Widget child,
   }) : super(
-          key: key,
           color: Colors.transparent,
           child: InkWell(
             onTap: onTap,
@@ -18,7 +17,7 @@ class CustomInkwellWidget extends Material {
         );
 
   CustomInkwellWidget.text({
-    Key? key,
+    super.key,
     required Function() onTap,
     required String title,
     TextStyle? textStyle,
@@ -35,7 +34,6 @@ class CustomInkwellWidget extends Material {
           'To provide both, use "textStyle: TextStyle(size: textSize)".',
         ),
         super(
-          key: key,
           color: Colors.transparent,
           child: InkWell(
             onTap: onTap,

@@ -16,12 +16,12 @@ class OnBoardingBaseWidget extends GetView<ApiInterfaceController> {
   final Alignment alignment;
 
   const OnBoardingBaseWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.backgroundColor,
     this.addBackgroundImage = false,
     this.alignment = Alignment.center,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
