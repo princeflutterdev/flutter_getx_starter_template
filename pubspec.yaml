@@ -22,7 +22,7 @@ dependencies:
   image_picker: ^1.0.4
   image_cropper: ^8.0.1
   #for date formatting
-  intl: ^0.19.0
+  intl: ^0.20.1
   octo_image: ^2.0.0
 
 
