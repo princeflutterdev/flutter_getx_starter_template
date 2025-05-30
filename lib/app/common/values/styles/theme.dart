@@ -40,7 +40,7 @@ abstract class AppTheme {
           overlayColor: WidgetStateProperty.resolveWith<Color?>(
             (Set<WidgetState> states) {
               if (states.contains(WidgetState.pressed)) {
-                return Colors.white.withOpacity(.14);
+                return Colors.white.withValues(alpha: .14);
               }
 
               return null;
@@ -72,7 +72,7 @@ abstract class AppTheme {
           overlayColor: WidgetStateProperty.resolveWith<Color?>(
             (Set<WidgetState> states) {
               if (states.contains(WidgetState.pressed)) {
-                return Colors.white.withOpacity(.14);
+                return Colors.white.withValues(alpha: .14);
               }
 
               return null;
@@ -115,13 +115,13 @@ abstract class AppTheme {
         focusedBorder: inputBorder,
         border: inputBorder,
       ),
-      cardTheme: CardTheme(
-        color: Colors.white.withOpacity(0.85),
+      cardTheme: CardThemeData(
+        color: Colors.white.withValues(alpha: 0.85),
         shape: RoundedRectangleBorder(
           borderRadius: 10.borderRadius,
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: 20.borderRadius,

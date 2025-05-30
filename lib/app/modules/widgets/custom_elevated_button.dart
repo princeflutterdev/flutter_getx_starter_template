@@ -55,8 +55,8 @@ class CustomElevatedButton extends StatelessWidget {
             if (states.contains(WidgetState.pressed)) {
               return buttonColor == Colors.transparent ||
                       buttonColor == Colors.white
-                  ? AppColors.kPrimaryColor.withOpacity(.24)
-                  : Colors.white.withOpacity(.14);
+                  ? AppColors.kPrimaryColor.withValues(alpha: .24)
+                  : Colors.white.withValues(alpha: .14);
             }
 
             return null;

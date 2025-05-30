@@ -31,14 +31,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^5.0.0
-  # flutter pub run change_app_package_name:main com.new.package.name
+  flutter_lints: ^6.0.0
+  # dart run change_app_package_name:main com.new.package.name
 
   change_app_package_name: ^1.1.0
-  # flutter pub run flutter_launcher_icons:main
+  # dart run flutter_launcher_icons:main
 
   flutter_launcher_icons: ^0.14.1
-  # flutter pub run flutter_native_splash:create
+  # dart run flutter_native_splash:create
 
   flutter_native_splash: ^2.3.2
 

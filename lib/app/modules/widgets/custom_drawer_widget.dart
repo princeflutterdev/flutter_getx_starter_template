@@ -26,7 +26,7 @@ class CustomDrawerWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: Divider(
                 thickness: 2.w,
-                color: AppColors.doveGray.withOpacity(0.5),
+                color: AppColors.doveGray.withValues(alpha: 0.5),
               ),
             ),
             Expanded(

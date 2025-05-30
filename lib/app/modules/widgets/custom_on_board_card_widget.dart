@@ -21,7 +21,7 @@ class CustomOnBoardCardWidget extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.85),
+          color: Colors.white.withValues(alpha: 0.85),
           borderRadius: 10.borderRadius,
         ),
         child: SingleChildScrollView(
@@ -41,7 +41,7 @@ class CustomOnBoardCardWidget extends StatelessWidget {
               Text(
                 subtitle,
                 style: AppTextStyle.regularStyle.copyWith(
-                  color: AppColors.mineShaft.withOpacity(0.65),
+                  color: AppColors.mineShaft.withValues(alpha: 0.65),
                   fontSize: subtitleTextSize ?? Dimens.fontSize16,
                 ),
               ),
